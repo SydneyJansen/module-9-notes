@@ -1,0 +1,27 @@
+---
+title: "module-9-notes"
+format: html
+---
+#make sure to load tidyverse for this to work
+
+```{r}
+f <- "https://raw.githubusercontent.com/difiore/ada-2024-datasets/main/Country-Data-2016.csv"
+d <- read_csv(f, col_names = TRUE)
+names(d)
+```
+#how many variables?
+
+```{r}
+nrow(d)
+names(d)
+glimpse(d)
+summary(d)
+#remove the NAs
+median(d$area, na.rm = TRUE)
+median(d$population, na.rm = TRUE)
+density<-d|>mutate(density=population/area)
+c<-length(unique(d$country))
+```
+
+
+The `echo: false` option disables the printing of code (only output is displayed).
